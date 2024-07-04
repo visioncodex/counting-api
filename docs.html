@@ -1,0 +1,150 @@
+<!-- """
+    Database Methods:
+        - Insert
+        - Update
+        - Delete
+        - Get
+
+    Class Methods:
+    
+    add_camera:
+        - camera_id: str(ordinal number)
+        - camera_name: str
+        - camera_url: str
+    
+    get_cameras:
+        - return all cameras
+
+    add_entrance_layout:
+        - camera_id: str
+        - layout: str(cordinates, example: "0;0;0;0;0;0;0;0")
+
+    get_entrance_layout:
+        - camera_id: str
+
+    add_count_data:
+        - camera_id: str
+        - input: int(0 or 1, if input is 1 then output is 0)
+        - output: int(0 or 1, if input is 0 then output is 1)
+        - timestamp: str
+
+    get_input_count_data:
+        return all input count data
+
+    get_output_count_data:
+        return all output count data
+
+    add_group_count_data:
+        - people_ids: list
+        - number_of_people: int
+        - timestamp: str
+    
+    get_group_count_data:
+        return all group count data
+
+    # trancate count data table
+    truncate_count_data:
+        remove all count data
+
+    truncate_group_count_data:
+        remove all group count data
+    """
+ -->
+<!-- Write html docs through above docstring-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>People Counting API</title>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                background-color: #1a1a1a; /* Dark background */
+                color: #95e1d3; /* Light text color */
+            }
+    
+            h1, h2, h3 {
+                color: #fff; /* White headings */
+            }
+    
+            pre {
+                background-color: #282828; /* Slightly darker background for code blocks */
+                padding: 10px;
+                border-radius: 5px;
+                overflow-x: auto;
+            }
+    
+            p {
+                margin-bottom: 10px;
+            }
+    
+            h2 {
+                margin-top: 20px;
+            }
+    
+            /* Optional: Adjust link colors for visibility */
+            a {
+                color: #95e1d3; /* Light blueish-green for links */
+            }
+        </style>
+
+
+    </head>
+    <body>
+        <h1>People Counting API</h1>
+
+        <h2> POST: https://peoplecounting.pythonanywhere.com/add_camera</h2>
+
+        <p>
+            Add camera
+        </p>
+        <pre>
+            <code>
+                {
+                    "camera_id": "1",
+                    "camera_name": "test",
+                    "camera_url": "test"
+                }
+            </code>
+        </pre>
+
+        <h2> POST: https://peoplecounting.pythonanywhere.com/add_entrance_layout</h2>
+
+        <p>
+            Add entrance layout
+        </p>
+        <pre>
+            <code>
+                {
+                    "camera_id": "1",
+                    "layout": "0;0;0;0;0;0;0;0"
+                }
+            </code>
+        </pre>
+
+        <h2> POST: https://peoplecounting.pythonanywhere.com/add_count_data</h2>
+
+        <p>
+            Add count data
+        </p>
+        <pre>
+            <code>
+                {
+                    "camera_id": "1",
+                    "input": "0",
+                    "output": "1",
+                    "timestamp": "2020-01-01 00:00:00"
+                }
+            </code>
+        </pre>
+    </body>
+</html>
+
+
+
+
+        
