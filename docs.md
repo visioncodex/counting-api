@@ -45,10 +45,21 @@ This Flask application serves as an API for managing cameras, entrance layouts, 
 - **URL:** `/group_count_data`
 - **Methods:** `GET`, `POST`
 - **Description:**
-- `GET`: Retrieves all group count data from the database.
 - `POST`: Adds new group count data to the database. If the request body is a list, it adds multiple group count data entries.
 - **Request Body (POST):** JSON object or list containing group count data details.
 - **Response (POST):** JSON message confirming the addition of the group count data.
+
+### Input Count data
+
+- **URL:** `/input_count_data`
+- **Methods:** `GET`
+- **Description:** Takes in a list of count data entries and adds them to the database.
+
+### Output Count data
+
+- **URL:** `/output_count_data`
+- **Methods:** `GET`
+- **Description:** Takes in a list of count data entries and outputs them in JSON format.
 
 ### Truncate Count Data
 
