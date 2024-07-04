@@ -90,9 +90,7 @@ def entrance_layouts():
 
 @app.route('/count_data', methods=['GET', 'POST'])
 def count_data():
-    if request.method == 'GET':
-        return jsonify(db.get_count_data())
-    elif request.method == 'POST':
+    if request.method == 'POST':
         data = request.get_json()
         if type(data) != list:
             db.add_count_data(data)
@@ -100,6 +98,15 @@ def count_data():
             db.add_several_count_data(data)
         return jsonify({"message": "Count data added successfully."})
     
+# get_input_count_data
+@app.route('/input_count_data', methods=['GET'])
+def input_count_data():
+    return jsonify(db.get_input_count_data())
+
+# get_output_count_data
+@app.route('/output_count_data', methods=['GET'])
+def output_count_data():
+    return jsonify(db.get_output_count_data())
 
 @app.route('/group_count_data', methods=['GET', 'POST'])
 def group_count_data():
