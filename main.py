@@ -61,7 +61,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def home():
-    path = str(pathlib.Path().absolute()/'docs.md')  # Assuming the file is named docs.md
+    path = str(pathlib.Path().absolute()/'counting-api/docs.md')  # Assuming the file is named docs.md
     with open(path, 'r') as f:
         md_content = f.read()
     html_content = markdown.markdown(md_content)
