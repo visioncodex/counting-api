@@ -53,6 +53,7 @@
 from flask import Flask, jsonify, request
 from database import Database
 import pathlib
+import markdown
 
 db = Database()
 app = Flask(__name__)
@@ -60,10 +61,11 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def home():
-    path = str(pathlib.Path().absolute()/'docs.html')
+    path = str(pathlib.Path().absolute()/'docs.md')  # Assuming the file is named docs.md
     with open(path, 'r') as f:
-        data = f.read()
-    return data
+        md_content = f.read()
+    html_content = markdown.markdown(md_content)
+    return html_content
 
 
 @app.route('/cameras', methods=['GET', 'POST'])
